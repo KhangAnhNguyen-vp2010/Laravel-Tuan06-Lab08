@@ -2,5 +2,5 @@
 
 <a href="{{ url('/') }}" style="color:#fff">Trang chủ</a>
 <a href="{{ route('products.index') }}" style="color:#fff">Products</a>
-<a href="" style="color:#fff">Tạo</a>
+<a href="{{ route('students.index') }}" style="color:#fff">Students</a>
 </nav>

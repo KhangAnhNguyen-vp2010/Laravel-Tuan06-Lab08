@@ -2,7 +2,7 @@
 <html lang="vi">
 <head>
 <meta charset="utf-8">
-<title>@yield('title','Articles')</title>
+<title>@yield('title','Lab08')</title>
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <style>
 body { font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial,

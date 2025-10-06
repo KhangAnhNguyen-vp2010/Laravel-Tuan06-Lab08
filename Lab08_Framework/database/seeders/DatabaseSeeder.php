@@ -19,5 +19,7 @@ class DatabaseSeeder extends Seeder
             ->count(5)
             ->hasProducts(10)
             ->create();
+
+        $this->call(StudentCourseSeeder::class);
     }
 }
