@@ -6,6 +6,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\Product;
 use App\Models\Category;
+use App\Models\Student;
 
 class ProductController extends Controller
 {
@@ -13,6 +14,12 @@ class ProductController extends Controller
     {
         $products = Product::with('category')->paginate(10);
         return view('products.index', compact('products'));
+    }
+
+    public function create()
+    {
+        $categories = Category::all();
+        return view('products.create', compact('categories'));
     }
 
     public function store(Request $request)
@@ -53,5 +60,16 @@ class ProductController extends Controller
     {
         $product->delete();
         return redirect()->route('products.index')->with('success', 'Xóa sản phẩm thành công!');
+    }
+
+    public function report()
+    {
+        $expensiveProducts = Product::where('price', '>', 100000)->get();
+
+        $categories = Category::withCount('products')->get();
+
+        $students = Student::withCount('courses')->get();
+
+        return view('products.report', compact('expensiveProducts', 'categories', 'students'));
     }
 }

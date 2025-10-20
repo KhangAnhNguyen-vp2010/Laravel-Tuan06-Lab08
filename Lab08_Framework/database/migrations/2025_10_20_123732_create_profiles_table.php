@@ -15,7 +15,7 @@ class CreateProfilesTable extends Migration
     {
         Schema::create('profiles', function (Blueprint $table) {
             $table->id();
-            $table->unsignedBigInteger('user_id')->unique(); // mỗi user chỉ có 1 profile
+            $table->unsignedBigInteger('user_id')->unique();
             $table->string('address')->nullable();
             $table->string('phone')->nullable();
             $table->timestamps();

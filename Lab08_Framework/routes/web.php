@@ -19,9 +19,11 @@ use App\Http\Controllers\UserController;
 Route::get('/', function () {
     return view('welcome');
 });
-
+Route::get('/products/report', [ProductController::class, 'report'])->name('products.report');
 Route::resource('/products', ProductController::class);
+
 
 Route::get('/students', [StudentController::class, 'index'])->name('students.index');
 
 Route::get('/users', [UserController::class, 'index'])->name('users.index');
+

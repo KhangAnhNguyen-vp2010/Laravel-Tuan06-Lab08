@@ -2,7 +2,7 @@
 @section('content')
 <h2>Danh sách sản phẩm</h2>
 <a href="{{ route('products.create') }}" class="bg-green-500 text-white px-4 py-2 rounded">Thêm mới</a>
-
+<a href="{{ route('products.report') }}" class="bg-green-500 text-white px-4 py-2 rounded">Report</a>
 @if(session('success'))
     <p class="text-green-500">{{ session('success') }}</p>
 @endif
@@ -39,7 +39,9 @@
     </tbody>
 </table>
 
-<div class="mt-2">
+<div>
     {{ $products->links() }}
 </div>
+
+
 @endsection
