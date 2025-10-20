@@ -19,6 +19,7 @@ class ProductFactory extends Factory
             'name' => $this->faker->words(2, true),
             'price' => $this->faker->numberBetween(10000, 500000),
             'category_id' => Category::factory(),
+            'stock' => $this->faker->numberBetween(0, 100),
         ];
     }
 }
